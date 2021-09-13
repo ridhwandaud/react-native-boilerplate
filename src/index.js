@@ -1,7 +1,7 @@
 // root of the app
 
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import Router from './screens';
 
 function App() {
