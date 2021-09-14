@@ -1,14 +1,21 @@
 // root of the app
 
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import Router from './screens';
+import {NavigationContainer} from '@react-navigation/native';
+
+//redux
+import {Provider} from 'react-redux';
+import {store} from './store';
+
+import Router from './screens/rootScreen';
 
 function App() {
   return (
-    <NavigationContainer>
-      <Router />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Router />
+      </NavigationContainer>
+    </Provider>
   );
 }
 
