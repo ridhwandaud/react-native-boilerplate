@@ -15,8 +15,14 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "react-native",
+        "react-hooks"
     ],
     "rules": {
+        "react/jsx-filename-extension": "off",
+        "react/jsx-props-no-spreading": "off",
+        "no-use-before-define": "off",
+        "arrow-body-style": "off"
     }
 }

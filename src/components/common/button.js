@@ -5,13 +5,17 @@ import {
   Text,
   ActivityIndicator,
 } from 'react-native';
+import PropTypes from 'prop-types';
 
-const Button = ({text, loading = false, disabled = false, ...other}) => {
+const Button = ({
+  text, loading, disabled, ...other
+}) => {
   return (
     <TouchableOpacity
       disabled={disabled}
       style={styles.button(disabled)}
-      {...other}>
+      {...other}
+    >
       {loading ? (
         <ActivityIndicator size="small" color="white" />
       ) : (
@@ -22,7 +26,7 @@ const Button = ({text, loading = false, disabled = false, ...other}) => {
 };
 
 const styles = StyleSheet.create({
-  button: disabled => ({
+  button: (disabled) => ({
     height: 50,
     borderRadius: 8,
     paddingHorizontal: 8,
@@ -31,11 +35,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
   }),
-  text: disabled => ({
+  text: (disabled) => ({
     fontSize: 14,
     fontWeight: '500',
     color: disabled ? '#838383' : 'white',
   }),
 });
+
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  loading: PropTypes.bool,
+  disabled: PropTypes.bool,
+};
+
+Button.defaultProps = {
+  loading: false,
+  disabled: false,
+};
 
 export default Button;

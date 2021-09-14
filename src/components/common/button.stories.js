@@ -1,10 +1,10 @@
 // src/components/common/button.stories.jsx
 import React from 'react';
-import {storiesOf} from '@storybook/react-native';
+import { View, StyleSheet } from 'react-native';
+import { storiesOf } from '@storybook/react-native';
 
 // I import my component here
 import Button from './button';
-import {View, StyleSheet} from 'react-native';
 
 // here I define that I want to create stories with the label "Buttons",
 // this will be the name in the storybook navigation
@@ -20,13 +20,13 @@ buttonStories.add('default view', () => (
 
 buttonStories.add('loading view', () => (
   <View style={styles.container}>
-    <Button onPress={() => null} text="Default Button" loading={true} />
+    <Button onPress={() => null} text="Default Button" loading />
   </View>
 ));
 
 buttonStories.add('disable view', () => (
   <View style={styles.container}>
-    <Button onPress={() => null} text="Default Button" disabled={true} />
+    <Button onPress={() => null} text="Default Button" disabled />
   </View>
 ));
 
